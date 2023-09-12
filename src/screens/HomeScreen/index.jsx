@@ -1,11 +1,11 @@
 import React from "react";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import NavBar from "../../components/NavBar/NavBar";
 
 
 function HomeScreen () {
   return (
     <>
-      <SearchBar />
+      <NavBar />
     </>
   )
 }
