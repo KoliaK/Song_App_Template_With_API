@@ -34,6 +34,10 @@ const NavBar = () => {
     setShowOptions(!showOptions);
   };
 
+  const formatNumberWithDots = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  };
+
   const sortBands = (bands) => {
     if (sortingOption === 'alphabetic') {
       return bands.sort((a, b) => a.name.localeCompare(b.name));
@@ -78,7 +82,7 @@ const NavBar = () => {
             <img className='band_img' src={band.image} alt={band.name} />
             <div className='band_info'>
               <h3 className='band_name'>{band.name}</h3>
-              <p className='band_plays'>{band.numPlays} Plays</p>
+              <p className='band_plays'>{formatNumberWithDots(band.numPlays)} Plays</p>
             </div>
           </div>
         ))}

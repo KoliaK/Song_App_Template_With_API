@@ -3,7 +3,6 @@ import GlassIcon from '../../assets/magnifying-glass-icon.png';
 import './SearchBar.css';
 
 const SearchBar = (props) => {
-  
   return (
     <>
       <div className="search_top_container">
