@@ -1,14 +1,10 @@
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: hsla(17, 80%, 51%, 0.842);
-  padding: 1rem;
-  /* position: fixed;
-  width: 100%; */
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-.options-container {
+.options_container {
   background-color: hsl(0, 0%, 87%);
   display: flex;
   align-items: center;
@@ -16,13 +12,13 @@ nav {
   padding: 0 1rem;
 }
 
-.results-found {
+.results_found {
   color: hsl(0, 0%, 50%);
   margin-left: 1rem;
   font-weight: 400;
 }
 
-.options-btn {
+.options_btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,12 +31,12 @@ nav {
   cursor: pointer;
 }
 
-.options-btn p {
+.options_btn p {
   padding: 0.2rem;
   margin-bottom: 0.5rem;
 }
 
-.options-popup{
+.options_popup{
   background-color: hsl(0, 0%, 50%);
   color: hsl(0, 0%, 100%);
   text-transform: uppercase;
@@ -51,33 +47,37 @@ nav {
   cursor: pointer;
 }
 
-.options-popup p{
+.options_popup p{
   font-size: 1.2rem;
   font-weight: 400;
   padding: 1rem;
 }
 
-.band-container {
+.results_container {
+  margin-top: 8.5rem;
+}
+
+.band_container {
   display: flex;
   margin: 1rem 2rem;
 }
 
-.band-info{
+.band_info{
   margin-left: 1.5rem;
   align-self: flex-end;
 }
 
-.band-name {
+.band_name {
   text-transform: uppercase;
   font-weight: 400;
 }
 
-.band-img {
+.band_img {
   width: 5rem;
   border-radius: 50%;
 }
 
-.band-plays {
+.band_plays {
   color: hsl(0, 0%, 83%);
   text-transform: uppercase;
   font-weight: 300;

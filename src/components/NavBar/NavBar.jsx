@@ -52,17 +52,15 @@ const NavBar = () => {
     <>
       <nav>
         <SearchBar value={searchTerm} onChange={handleInputChange} />
-      </nav>
-      <div>
-        <div className="options-container">
-          <p className="results-found">{filteredBands.length} resultados</p>
+        <div className="options_container">
+          <p className="results_found">{filteredBands.length} resultados</p>
           <div className="accordion">
             <button
-              className="options-btn"
+              className="options_btn"
               onClick={toggleOptions}
             ><p>↑↓</p></button>
             {showOptions && (
-              <div className="options-popup">
+              <div className="options_popup">
                 <p onClick={() => handleSortingOptionChange('alphabetic')}>
                   Ordem Alfabética
                 </p>
@@ -73,14 +71,15 @@ const NavBar = () => {
             )}
           </div>
         </div>
-      </div>
-      <div>
+      </nav>
+
+      <div className="results_container">
         {filteredBands.map((band) => (
-          <div className='band-container' key={band.id}>
-            <img className='band-img' src={band.image} alt={band.name} />
-            <div className='band-info'>
-              <h3 className='band-name'>{band.name}</h3>
-              <p className='band-plays'>{band.numPlays} Plays</p>
+          <div className='band_container' key={band.id}>
+            <img className='band_img' src={band.image} alt={band.name} />
+            <div className='band_info'>
+              <h3 className='band_name'>{band.name}</h3>
+              <p className='band_plays'>{band.numPlays} Plays</p>
             </div>
           </div>
         ))}
