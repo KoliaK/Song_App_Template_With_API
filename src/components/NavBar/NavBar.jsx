@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchBar from '../SearchBar/SearchBar';
+import ButtonAccordion from '../ButtonAccordion/ButtonAccordion';
 import './NavBar.css';
+
 
 const NavBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -55,10 +57,7 @@ const NavBar = () => {
         <div className="options_container">
           <p className="results_found">{filteredBands.length} resultados</p>
           <div className="accordion">
-            <button
-              className="options_btn"
-              onClick={toggleOptions}
-            ><p>↑↓</p></button>
+            <ButtonAccordion onClick={toggleOptions} />
             {showOptions && (
               <div className="options_popup">
                 <p onClick={() => handleSortingOptionChange('alphabetic')}>
