@@ -34,10 +34,6 @@ const NavBar = () => {
     setShowOptions(!showOptions);
   };
 
-  const formatNumberWithDots = (number) => {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-  };
-
   const sortBands = (bands) => {
     if (sortingOption === 'alphabetic') {
       return bands.sort((a, b) => a.name.localeCompare(b.name));
@@ -53,6 +49,10 @@ const NavBar = () => {
       band.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
   );
+
+  const formatNumberWithDots = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  };
 
   return (
     <>
