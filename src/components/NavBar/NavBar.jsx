@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchBar from '../SearchBar/SearchBar';
-import ButtonAccordion from '../ButtonAccordion/ButtonAccordion';
+import Accordion from '../Accordion/Accordion';
 import './NavBar.css';
 
 
@@ -61,7 +61,7 @@ const NavBar = () => {
         <div className="options_container">
           <p className="results_found">{filteredBands.length} resultados</p>
           <div className="accordion">
-            <ButtonAccordion onClick={toggleOptions} showOptions={showOptions} handleSortingOptionChange={handleSortingOptionChange}/>
+            <Accordion onClick={toggleOptions} showOptions={showOptions} handleSortingOptionChange={handleSortingOptionChange}/>
           </div>
         </div>
       </nav>

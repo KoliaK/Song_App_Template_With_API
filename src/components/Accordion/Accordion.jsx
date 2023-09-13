@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Button = styled.button `
@@ -18,7 +18,7 @@ padding: 0.2rem;
 margin-bottom: 0.5rem;
 `
 
-const ButtonAccordion = (props) => {
+const Accordion = (props) => {
   const { showOptions, handleSortingOptionChange } = props;
 
   return (
@@ -40,4 +40,4 @@ const ButtonAccordion = (props) => {
   );
 }
 
-export default ButtonAccordion;
+export default Accordion;
