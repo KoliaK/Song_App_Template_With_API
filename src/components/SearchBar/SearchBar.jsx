@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import GlassIcon from '../../assets/magnifying-glass-icon.png';
-import './SearchBar.css';
 
 const SearchTop = styled.div `
 background-color: hsla(17, 80%, 51%, 0.842);
