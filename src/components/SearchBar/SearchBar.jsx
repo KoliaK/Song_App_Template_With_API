@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import GlassIcon from '../../assets/magnifying-glass-icon.png';
 
-const SearchTop = styled.div `
+const Search = styled.div `
 background-color: hsla(17, 80%, 51%, 0.842);
 display: flex;
 align-items: center;
@@ -36,18 +36,14 @@ font-size: 1rem;
 const SearchBar = (props) => {
   return (
     <>
-      <SearchTop>
+      <Search>
         <Input
         type="text"
         placeholder=''
         value={props.value}
         onChange={props.onChange} />
         <Isobar>isobar<Fm>.fm</Fm></Isobar>
-      </SearchTop>
-
-      <div className="search_bottom_container">
-        {/* TRY TO BRING OPTIONS SECTION HERE FROM NavBar.jsx */}
-      </div>
+      </Search>
     </>
   );
 }

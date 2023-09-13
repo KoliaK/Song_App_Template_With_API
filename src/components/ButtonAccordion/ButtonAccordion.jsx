@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Button = styled.button `
@@ -19,11 +19,23 @@ margin-bottom: 0.5rem;
 `
 
 const ButtonAccordion = (props) => {
+  const { showOptions, handleSortingOptionChange } = props;
+
   return (
     <>
       <Button
         onClick={props.onClick}
       ><ButtonContent>↑↓</ButtonContent></Button>
+      {showOptions && (
+        <div className="options_popup">
+          <p onClick={() => handleSortingOptionChange('alphabetic')}>
+            Ordem Alfabética
+          </p>
+          <p onClick={() => handleSortingOptionChange('popularity')}>
+            Popularidade
+          </p>
+        </div>
+      )}
     </>
   );
 }

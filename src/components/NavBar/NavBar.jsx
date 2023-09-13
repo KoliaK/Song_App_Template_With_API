@@ -61,17 +61,7 @@ const NavBar = () => {
         <div className="options_container">
           <p className="results_found">{filteredBands.length} resultados</p>
           <div className="accordion">
-            <ButtonAccordion onClick={toggleOptions} />
-            {showOptions && (
-              <div className="options_popup">
-                <p onClick={() => handleSortingOptionChange('alphabetic')}>
-                  Ordem Alfabética
-                </p>
-                <p onClick={() => handleSortingOptionChange('popularity')}>
-                  Popularidade
-                </p>
-              </div>
-            )}
+            <ButtonAccordion onClick={toggleOptions} showOptions={showOptions} handleSortingOptionChange={handleSortingOptionChange}/>
           </div>
         </div>
       </nav>
