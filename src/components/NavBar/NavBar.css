@@ -4,14 +4,6 @@ nav {
   width: 100%;
 }
 
-.options_container {
-  background-color: hsl(0, 0%, 87%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-}
-
 .results_found {
   color: hsl(0, 0%, 50%);
   margin-left: 1rem;

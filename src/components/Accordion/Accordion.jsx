@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+const OptionsContainer = styled.div `
+background-color: hsl(0, 0%, 87%);
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 1rem;
+`
+
 const Button = styled.button `
   display: flex;
   align-items: center;
@@ -19,23 +27,29 @@ margin-bottom: 0.5rem;
 `
 
 const Accordion = (props) => {
-  const { showOptions, handleSortingOptionChange } = props;
+  const { filteredBands, showOptions, handleSortingOptionChange } = props;
 
   return (
     <>
-      <Button
-        onClick={props.onClick}
-      ><ButtonContent>↑↓</ButtonContent></Button>
-      {showOptions && (
-        <div className="options_popup">
-          <p onClick={() => handleSortingOptionChange('alphabetic')}>
-            Ordem Alfabética
-          </p>
-          <p onClick={() => handleSortingOptionChange('popularity')}>
-            Popularidade
-          </p>
+      <OptionsContainer>
+        <p className="results_found">{filteredBands.length} resultados</p>
+        <div className="accordion">
+          
+          <Button
+            onClick={props.onClick}
+          ><ButtonContent>↑↓</ButtonContent></Button>
+          {showOptions && (
+            <div className="options_popup">
+              <p onClick={() => handleSortingOptionChange('alphabetic')}>
+                Ordem Alfabética
+              </p>
+              <p onClick={() => handleSortingOptionChange('popularity')}>
+                Popularidade
+              </p>
+            </div>
+          )}
         </div>
-      )}
+      </OptionsContainer>
     </>
   );
 }

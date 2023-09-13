@@ -57,13 +57,8 @@ const NavBar = () => {
   return (
     <>
       <nav>
-        <SearchBar value={searchTerm} onChange={handleInputChange} />
-        <div className="options_container">
-          <p className="results_found">{filteredBands.length} resultados</p>
-          <div className="accordion">
-            <Accordion onClick={toggleOptions} showOptions={showOptions} handleSortingOptionChange={handleSortingOptionChange}/>
-          </div>
-        </div>
+        <SearchBar value={searchTerm} onChange={handleInputChange} />  
+        <Accordion filteredBands={filteredBands} onClick={toggleOptions} showOptions={showOptions} handleSortingOptionChange={handleSortingOptionChange}/>
       </nav>
 
       <div className="results_container">
