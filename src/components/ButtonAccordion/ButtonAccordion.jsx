@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonAccordion = (props) => {
-  const Button = styled.button `
+const Button = styled.button `
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,11 +13,12 @@ const ButtonAccordion = (props) => {
   font-size: 1.9rem;
   cursor: pointer;
   `
-  const ButtonContent = styled.p `
-  padding: 0.2rem;
-  margin-bottom: 0.5rem;
-  `
+const ButtonContent = styled.p `
+padding: 0.2rem;
+margin-bottom: 0.5rem;
+`
 
+const ButtonAccordion = (props) => {
   return (
     <>
       <Button
