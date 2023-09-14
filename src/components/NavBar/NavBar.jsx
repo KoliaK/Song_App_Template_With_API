@@ -43,8 +43,7 @@ const NavBar = () => {
       return bands;
     }
   };
-
-/*TEST COMMENT */
+  
   const filteredBands = sortBands(
     bands.filter((band) =>
       band.name.toLowerCase().includes(searchTerm.toLowerCase())
