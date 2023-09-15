@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import SearchBar from '../SearchBar/SearchBar';
-import Accordion from '../Accordion/Accordion';
-import './NavBar.css';
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import SearchBar from "../SearchBar/SearchBar";
+import Accordion from "../Accordion/Accordion";
+import "./NavBar.css";
 
 const NavBar = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [bands, setBands] = useState([]);
-  const [sortingOption, setSortingOption] = useState('');
+  const [sortingOption, setSortingOption] = useState("");
   const [showOptions, setShowOptions] = useState(false);
 
   useEffect(() => {
-    axios.get('https://dws-recruiting-bands.dwsbrazil.io/api/bands')
+    axios
+      .get("https://dws-recruiting-bands.dwsbrazil.io/api/bands")
       .then((response) => {
         setBands(response.data);
       })
@@ -35,15 +35,15 @@ const NavBar = () => {
   };
 
   const sortBands = (bands) => {
-    if (sortingOption === 'alphabetic') {
+    if (sortingOption === "alphabetic") {
       return bands.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortingOption === 'popularity') {
+    } else if (sortingOption === "popularity") {
       return bands.sort((a, b) => b.numPlays - a.numPlays);
     } else {
       return bands;
     }
   };
-  
+
   const filteredBands = sortBands(
     bands.filter((band) =>
       band.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -51,23 +51,30 @@ const NavBar = () => {
   );
 
   const formatNumberWithDots = (number) => {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
 
   return (
     <>
       <nav>
-        <SearchBar value={searchTerm} onChange={handleInputChange} />  
-        <Accordion filteredBands={filteredBands} onClick={toggleOptions} showOptions={showOptions} handleSortingOptionChange={handleSortingOptionChange}/>
+        <SearchBar value={searchTerm} onChange={handleInputChange} />
+        <Accordion
+          filteredBands={filteredBands}
+          onClick={toggleOptions}
+          showOptions={showOptions}
+          handleSortingOptionChange={handleSortingOptionChange}
+        />
       </nav>
 
       <div className="results_container">
         {filteredBands.map((band) => (
-          <div className='band_container' key={band.id}>
-            <img className='band_img' src={band.image} alt={band.name} />
-            <div className='band_info'>
-              <h3 className='band_name'>{band.name}</h3>
-              <p className='band_plays'>{formatNumberWithDots(band.numPlays)} Plays</p>
+          <div className="band_container" key={band.id}>
+            <img className="band_img" src={band.image} alt={band.name} />
+            <div className="band_info">
+              <h3 className="band_name">{band.name}</h3>
+              <p className="band_plays">
+                {formatNumberWithDots(band.numPlays)} Plays
+              </p>
             </div>
           </div>
         ))}
